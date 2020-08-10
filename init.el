@@ -44,6 +44,8 @@
     markdown-mode
 
     prettier-js
+
+    neotree
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -84,10 +86,10 @@
  '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
    (quote
-    ("dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
+    ("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
  '(package-selected-packages
    (quote
-    (magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
+    (neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
