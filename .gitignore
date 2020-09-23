@@ -13,3 +13,4 @@ backups
 melpa-stable
 archive-contents
 *.elc
+elpa/

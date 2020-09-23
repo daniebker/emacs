@@ -1,3 +1,4 @@
+
 (require 'package)
 
 ;; Add melpa package source when using package list
@@ -46,6 +47,9 @@
     prettier-js
 
     neotree
+
+    ;; Sidebars!
+    org-sidebar
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -77,11 +81,17 @@
 ;; Custom Languages
 (load "setup-js.el")
 
+(load "org-mode.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
+ '(org-directory "~/zettlekasten") 
+ '(org-agenda-files (list org-directory))
+
  '(coffee-tab-width 2)
  '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
