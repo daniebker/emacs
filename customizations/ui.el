@@ -53,3 +53,5 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+(setq-default line-spacing 0.25)

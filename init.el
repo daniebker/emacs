@@ -50,6 +50,12 @@
 
     ;; Sidebars!
     org-sidebar
+
+    ;; Better window switching
+    ace-window
+
+    ;; auto complete 
+    ac-helm
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -83,23 +89,24 @@
 
 (load "org-mode.el")
 
+;; Set ace window to override other window
+(global-set-key (kbd "C-x o") 'ace-window)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
- '(org-directory "~/zettlekasten") 
- '(org-agenda-files (list org-directory))
-
  '(coffee-tab-width 2)
  '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
    (quote
     ("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
+ '(org-agenda-files (list org-directory))
+ '(org-directory "~/zettlekasten")
  '(package-selected-packages
    (quote
-    (neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
+    (ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
