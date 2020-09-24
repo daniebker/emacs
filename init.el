@@ -53,7 +53,7 @@
 
     ;; Better window switching
     ace-window
-
+    
     ;; auto complete 
     ac-helm
     ))
@@ -81,17 +81,14 @@
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
-
 (load "ui.el")
-
 ;; Custom Languages
 (load "setup-js.el")
-
 (load "org-mode.el")
 
 ;; Set ace window to override other window
 (global-set-key (kbd "C-x o") 'ace-window)
-
+(setq org-agenda-files '("~/zettlekasten"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -102,9 +99,7 @@
  '(custom-safe-themes
    (quote
     ("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
- '(org-agenda-files (list org-directory))
- '(org-directory "~/zettlekasten")
- '(package-selected-packages
+  '(package-selected-packages
    (quote
     (ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
