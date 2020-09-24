@@ -7,19 +7,20 @@
 
 (add-to-list 'org-modules 'org-habit)
 
-;;(setq org-todo-keywords
-;      '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" | "DONE" "CANCELLED")))
+(setq org-todo-keywords
+      '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELLED")))
 
 ;; Set attachment directory
-;;(setq org-attach-directory "~/zettlekasten/assets/")
+(setq org-attach-directory "~/zettlekasten/assets/")
 
-;;(setq org-capture-templates '(("t" "Todo [inbox]" entry
-;;                               (file+headline "~/zettlekasten/inbox.org" "Tasks")
-;;                               "* TODO %i%?")
-;;                              ("T" "Tickler" entry
-;;                               (file+headline "~/zettlekasten/tickler.org" "Tickler")
-;;                               "* %i%? \n %U")))
-;;;;;;
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/zettlekasten/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/zettlekasten/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
+
+;;;;;;;;
 ;; KEY MAPPINGS
 ;;;;
 
