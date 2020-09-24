@@ -45,9 +45,20 @@
 ;; AGENDA
 ;;;;
 
+(setq org-agenda-custom-commands
+      '(("d" "Daily agenda and all TODOs"
+         ((tags "PRIORITY=\"A\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+          (agenda "" ((org-agenda-ndays 1)))
+          (alltodo ""
+                   ((org-agenda-skip-function '(or (org-agenda-skip-if nil '(scheduled deadline))))
+                    (org-agenda-overriding-header "ALL normal priority tasks:"))))
+         ((org-agenda-compact-blocks t)))))
+
 ;; Show {x} days total
 ;; Starting from today
 ;; With {x} days look back
-(setq org-agenda-span 4
+(setq org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-start-day "-1d")
