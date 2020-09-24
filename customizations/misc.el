@@ -21,3 +21,4 @@
     `((".*" ,emacs-tmp-dir t)))
 (setq auto-save-list-file-prefix
     emacs-tmp-dir)
+(setq backup-directory-alist `(("." . "~/.emacs_saves")))

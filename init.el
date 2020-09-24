@@ -50,6 +50,9 @@
 
     ;; Sidebars!
     org-sidebar
+
+    ;; autocomplete
+    ac-helm
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -75,12 +78,9 @@
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
-
 (load "ui.el")
-
 ;; Custom Languages
 (load "setup-js.el")
-
 (load "org-mode.el")
 
 (custom-set-variables
@@ -92,10 +92,10 @@
  '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
    '("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default))
- '(org-agenda-files (list org-directory))
+ '(org-agenda-files nil)
  '(org-directory "~/zettlekasten")
  '(package-selected-packages
-   '(neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme)))
+   '(ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

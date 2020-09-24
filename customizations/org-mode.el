@@ -1,28 +1,27 @@
- ;;;;
- ;; ORG-MODE
- ;;;;
+;;;;
+;; ORG-MODE
+;;;;
  
 (require 'org)
 (require 'org-habit)
 
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
+
 (add-to-list 'org-modules 'org-habit)
 
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "DONE")))
+      '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" | "DONE" "CANCELLED")))
 
+;; Set attachment directory
+(setq org-attach-directory "~/zettlekasten/assets/")
 
-;;(setq org-capture-templates
-;;      '(("t" "Todo" entry (file+headline "C:/notes/diary/gtd.org" "_inbox")
-;;         "** TODO %?\n %U\n")
-;;        ("f" "Food Log" entry (file+datetree+prompt "C:/notes/diary/food.org")
-;;                "* %?\n%T\n%^{Meal}p%^{Type}p")
-;;        ("c" "Check in" entry (file+datetree+prompt "C:/notes/diary/log.org")
-;;                "* %?\n%T\n%^{Grateful}p%^{Feel}p%^{Health}p")
-;;        ("g" "Garden" entry (file+datetree+prompt "C:/notes/diary/garden.org")
-;;                "* %?\n%T\n%^{Activity}p%^{State}p")))
-;;
-
-
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/zettlekasten/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/zettlekasten/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
 ;;;;
 ;; KEY MAPPINGS
 ;;;;
@@ -32,9 +31,17 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c C-l") 'org-insert-link)
 
+;;;;
+;; REFILE
+;;;;
+
 (setq org-refile-targets
-      '(("done.org" :maxlevel . 1)
-        ("someday.org" :maxlevel . 1)))
+      '((nil :maxlevel . 9)
+	(org-agenda-files :maxlevel . 8)))
+
+(setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;;;;
 ;; AGENDA
