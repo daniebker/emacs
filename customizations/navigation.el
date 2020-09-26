@@ -61,3 +61,6 @@
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+;; Set ace window to override other window
+(global-set-key (kbd "C-x o") 'ace-window)
