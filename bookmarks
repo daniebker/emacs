@@ -3,13 +3,13 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/.notes")
- (front-context-string . "** TODO huh\n   [")
- (rear-context-string)
- (position . 9))
+ (filename . "~/zettlekasten/inbox.org")
+ (front-context-string . "** TODO Review S")
+ (rear-context-string . "ck on Pagetalia\n")
+ (position . 112))
 ("org-refile-last-stored"
- (filename . "~/zettlekasten/journal.org")
- (front-context-string . "*** Test\n* Check")
- (rear-context-string . "an MVP\n\n** Test\n")
- (position . 10442))
+ (filename . "~/zettlekasten/brain.org")
+ (front-context-string . "* How I Take Not")
+ (rear-context-string . "map\n- for int i\n")
+ (position . 151))
 )

@@ -25,6 +25,12 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(
+    ;; Makes writing lisp much easier.
+    paredit
+    
+    ;; colorful parenthesis matching
+    rainbow-delimiters
+
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
@@ -85,6 +91,8 @@
 ;; Custom Languages
 (load "setup-js.el")
 (load "org-mode.el")
+(load "editor.el")
+(load "elisp-editing.el")
 ;; Set ace window to override other window
 (global-set-key (kbd "C-x o") 'ace-window)
 (setq org-agenda-files '("~/zettlekasten"))
@@ -101,7 +109,7 @@
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
+    (paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

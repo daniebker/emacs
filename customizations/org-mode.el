@@ -56,14 +56,6 @@
                     (org-agenda-overriding-header "ALL normal priority tasks:"))))
          ((org-agenda-compact-blocks t)))))
 
-;; Show {x} days total
-;; Starting from today
-;; With {x} days look back
-(setq org-agenda-span 1
-      org-agenda-start-on-weekday nil
-      org-agenda-start-day "-1d")
-
-
 ;;;;
 ;; Add ids to Headings
 ;;;;
