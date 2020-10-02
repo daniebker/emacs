@@ -62,6 +62,11 @@
     
     ;; auto complete 
     ac-helm
+
+    ;; org mode roam research tooling
+    org-roam
+
+    org-roam-server
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -91,6 +96,7 @@
 ;; Custom Languages
 (load "setup-js.el")
 (load "org-mode.el")
+(load "org-roam.el")
 (load "editor.el")
 (load "elisp-editing.el")
 ;; Set ace window to override other window
@@ -102,14 +108,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
- '(custom-enabled-themes (quote (dracula)))
+ '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
-   (quote
-    ("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
- '(org-export-backends (quote (ascii html icalendar latex md odt)))
+   '("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default))
+ '(org-export-backends '(ascii html icalendar latex md odt))
  '(package-selected-packages
-   (quote
-    (paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
+   '(paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

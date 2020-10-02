@@ -1,3 +1,6 @@
+;; UTF-8 as default encoding
+(set-language-environment "UTF-8")
+
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 

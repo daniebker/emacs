@@ -6,7 +6,7 @@
 (require 'org-habit)
 
 (add-to-list 'org-modules 'org-habit)
-
+(add-hook 'org-mode-hook #'visual-line-mode)
 (setq org-todo-keywords
       '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELLED")))
 
@@ -14,10 +14,10 @@
 (setq org-attach-directory "~/zettlekasten/assets/")
 
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                               (file+headline "~/zettlekasten/inbox.org" "Tasks")
+                               (file+headline "~/gtd/inbox.org" "Tasks")
                                "* TODO %i%?")
                               ("T" "Tickler" entry
-                               (file+headline "~/zettlekasten/tickler.org" "Tickler")
+                               (file+headline "~/gtd/tickler.org" "Tickler")
                                "* %i%? \n %U")))
 
 ;;;;;;;;
@@ -48,7 +48,7 @@
 (setq org-agenda-custom-commands
       '(("d" "Daily agenda and all TODOs"
          ((tags "PRIORITY=\"A\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("TODO" "DONE" "CANCELLED")))
                  (org-agenda-overriding-header "High-priority unfinished tasks:")))
           (agenda "" ((org-agenda-ndays 1)))
           (alltodo ""
@@ -136,3 +136,28 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
                         (when (and (eq major-mode 'org-mode)
                                    (eq buffer-read-only nil))
                           (eos/org-add-ids-to-headlines-in-file))))))
+
+
+;;;;;
+;; OR-ROAM
+;;;;;
+(require 'org-roam)
+(require 'org-roam-protocol)
+(setq org-roam-directory "~/org-roam")
+(add-hook 'after-init-hook 'org-roam-mode)
+
+(setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe")
+
+(load-file "~/.emacs.d/customizations/org-mode/org-protocol-check-filename-for-protocol.el")
+(advice-add 'org-protocol-check-filename-for-protocol :override '+org-protocol-check-filename-for-protocol)
+
+(require 'org-roam-server)
+(setq org-roam-server-host "127.0.0.1"
+       org-roam-server-port 8118
+       org-roam-server-export-inline-images t
+       org-roam-server-authenticate nil
+       org-roam-server-network-poll t
+       org-roam-server-network-arrows nil
+       org-roam-server-network-label-truncate t
+       org-roam-server-network-label-truncate-length 60
+       org-roam-server-network-label-wrap-length 20)
