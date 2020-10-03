@@ -10,9 +10,6 @@
 ;; Show line numbers
 (global-linum-mode)
 
-;; Line Wrap
-(visual-line-mode)
-
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
  (when (fboundp 'tool-bar-mode)
@@ -55,3 +52,12 @@
 (setq ring-bell-function 'ignore)
 
 (setq-default line-spacing 0.25)
+
+;; Olivetti
+;; Look & Feel for long-form writing
+
+;; Set the body text width
+(setq olivetti-body-width 100)
+
+;; Enable Olivetti for text-related mode such as Org Mode
+(add-hook 'text-mode-hook 'olivetti-mode)

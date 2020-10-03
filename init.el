@@ -66,7 +66,17 @@
     ;; org mode roam research tooling
     org-roam
 
+    ;; org server for graph connections
     org-roam-server
+
+    ;; nice formatting when writing text
+    olivetti
+
+    ;; Support for citations in org-roam
+    org-roam-bibtex
+
+    ;; Org references
+    org-ref
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -101,19 +111,21 @@
 (load "elisp-editing.el")
 ;; Set ace window to override other window
 (global-set-key (kbd "C-x o") 'ace-window)
-(setq org-agenda-files '("~/zettlekasten"))
+(setq org-agenda-files '("~/gtd"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
- '(custom-enabled-themes '(dracula))
+ '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
-   '("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default))
- '(org-export-backends '(ascii html icalendar latex md odt))
+   (quote
+    ("698d072bc75860ae449ac55c138e9a0d0e125c3cb58149238470e598ab9fae0d" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default)))
+ '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
-   '(paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme)))
+   (quote
+    (olivetti org-roam-server paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,15 +1,20 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored"
- (filename . "~/org-roam/20201002161808-org_roam.org")
- (front-context-string . "#+title: org-roa")
+(("org-capture-last-stored-marker"
+ (filename . "~/gtd/journal.org")
+ (front-context-string . "*** TODO Use spe")
+ (rear-context-string . "7d9b9\n    :END:\n")
+ (position . 6205))
+("org-capture-last-stored"
+ (filename . "~/org-roam/20201002200858-customising_emacs.org")
+ (front-context-string . "#+title: customi")
  (rear-context-string)
  (position . 1))
 ("org-refile-last-stored"
- (filename . "~/zettlekasten/brain.org")
- (front-context-string . "* How I Take Not")
- (rear-context-string . "map\n- for int i\n")
- (position . 151))
+ (filename . "~/gtd/journal.org")
+ (front-context-string . "*** TODO Use spe")
+ (rear-context-string . "7d9b9\n    :END:\n")
+ (position . 6205))
 )

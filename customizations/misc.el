@@ -22,3 +22,6 @@
 (setq auto-save-list-file-prefix
     emacs-tmp-dir)
 (setq backup-directory-alist `(("." . "~/.emacs_saves")))
+
+(setenv "LANG" "en_GB")
+(setq ispell-program-name "hunspell")

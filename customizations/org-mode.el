@@ -46,7 +46,12 @@
 ;;;;
 
 (setq org-agenda-custom-commands
-      '(("d" "Daily agenda and all TODOs"
+      '(
+	("n" "Next Actions"
+	 ((tags "project"
+		((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+		 (org-agenda-overriding-header "Next Actions:")))))
+	("d" "Daily agenda and all TODOs"
          ((tags "PRIORITY=\"A\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("TODO" "DONE" "CANCELLED")))
                  (org-agenda-overriding-header "High-priority unfinished tasks:")))
@@ -139,14 +144,15 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
 
 
 ;;;;;
-;; OR-ROAM
+;; ORG-ROAM
 ;;;;;
 (require 'org-roam)
 (require 'org-roam-protocol)
 (setq org-roam-directory "~/org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
 
-(setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe")
+(cond ((string-equal system-type "windows-nt")
+      (setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe")))
 
 (load-file "~/.emacs.d/customizations/org-mode/org-protocol-check-filename-for-protocol.el")
 (advice-add 'org-protocol-check-filename-for-protocol :override '+org-protocol-check-filename-for-protocol)
@@ -161,3 +167,28 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
        org-roam-server-network-label-truncate t
        org-roam-server-network-label-truncate-length 60
        org-roam-server-network-label-wrap-length 20)
+
+;;;;;
+;; ORG-ROAM BIBTEX
+;;;;;
+
+;; Org-ref
+;; Set up bibliography
+(setq org-ref-default-bibliography '("~/org-roam/My Library.bib"))
+(setq bibtex-completion-bibliography "~/org-roam/My Library.bib")
+(global-set-key (kbd "<f6>") #'org-ref-helm-insert-cite-link)
+
+;; Org-roam-bibtex
+(require `org-roam-bibtex)
+(add-hook 'after-init-hook #'org-roam-bibtex-mode)
+(define-key org-roam-bibtex-mode-map (kbd "C-c n a") #'orb-note-actions)
+
+;;;;;
+;; ORG-ROAM Keybindings
+;;;;;
+
+(global-set-key (kbd "C-c r r") 'org-roam)
+(global-set-key (kbd "C-c r f") 'org-roam-find-file)
+(global-set-key (kbd "C-c r g") 'org-roam-graph)
+(global-set-key (kbd "C-c r i") 'org-roam-insert)
+(global-set-key (kbd "C-c r S") 'org-roam-server-mode)
