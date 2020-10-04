@@ -8,8 +8,8 @@
  (rear-context-string . "7d9b9\n    :END:\n")
  (position . 6205))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20201002200858-customising_emacs.org")
- (front-context-string . "#+title: customi")
+ (filename . "~/org-roam/20201004161432-changing_the_default_capture_template_in_org_roam.org")
+ (front-context-string . "#+TITLE: Changin")
  (rear-context-string)
  (position . 1))
 ("org-refile-last-stored"

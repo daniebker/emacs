@@ -142,6 +142,18 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
                                    (eq buffer-read-only nil))
                           (eos/org-add-ids-to-headlines-in-file))))))
 
+;;;;;
+;; Tag Alignment
+;;;;;
+;; From: https://stackoverflow.com/questions/6210840/tag-position-in-org-mode
+
+(add-hook 'focus-in-hook 
+  (lambda () (progn 
+    (setq org-tags-column (- 5 (window-body-width)))) (org-align-all-tags)))
+
+(add-hook 'focus-out-hook 
+  (lambda () (progn 
+    (setq org-tags-column (- 5 (window-body-width)))) (org-align-all-tags)))
 
 ;;;;;
 ;; ORG-ROAM
@@ -182,6 +194,29 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
 (require `org-roam-bibtex)
 (add-hook 'after-init-hook #'org-roam-bibtex-mode)
 (define-key org-roam-bibtex-mode-map (kbd "C-c n a") #'orb-note-actions)
+
+(setq org-roam-capture-templates
+      '(("d" "default" plain
+         (function org-roam-capture--get-point)
+         "%?"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+ROAM_TAGS:\n\n"
+         :unnarrowed t)
+        ))
+
+;; COMPANY
+
+(require 'company-org-roam)
+(push 'company-org-roam company-backends)
+
+(smartparens-global-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-minimum-prefix-length 2)
+(setq company-idle-delay 0.25)
+(setq company-backends '(company-capf))
+;; This enables candidates matching to be case-insensitive
+(setq completion-ignore-case t)
+(setq org-roam-link-auto-replace nil)
 
 ;;;;;
 ;; ORG-ROAM Keybindings

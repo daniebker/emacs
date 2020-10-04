@@ -77,6 +77,13 @@
 
     ;; Org references
     org-ref
+
+    ;; autoclose parens
+    smartparens
+
+    ;; Inline autocomplete
+    company
+    company-org-roam
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -93,6 +100,8 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(helm-mode 1)
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
@@ -125,7 +134,7 @@
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (olivetti org-roam-server paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
+    (company-org-roam company olivetti org-roam-server paredit ace-window org-sidebar prettier-js markdown-mode quelpa ac-helm neotree magit tagedit rainbow-delimiters projectile smex rjsx-mode dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
