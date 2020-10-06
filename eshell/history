@@ -1,0 +1,32 @@
+ls
+git status
+git status
+git status
+git status
+git add VDAB.org 
+git status
+git commit -m "What is VBDA?"
+cd d:/git/gitlab/holiday-hub-2020/
+yarn develop
+cd ~/.emacs.d
+git pull
+git stash
+git pull
+npm run build
+npm run serve
+cd ~/.emacs.d/
+ls
+git pull
+git status
+git add customizations/navigation.el 
+git commit -m  "window resizing"
+git push
+git add elpa/
+git status
+git diff init.el 
+git add init.el 
+git commit -m "package updates"
+git push
+git status
+git add .
+git commmit -m "org archiving persist trees"

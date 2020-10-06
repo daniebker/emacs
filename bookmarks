@@ -3,18 +3,18 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored-marker"
- (filename . "~/gtd/journal.org")
- (front-context-string . "*** TODO Use spe")
- (rear-context-string . "7d9b9\n    :END:\n")
- (position . 6205))
+ (filename . "//DESKTOP-TNT2VMI/Users/baker/gtd/projects.org")
+ (front-context-string . "*** TODO Check o")
+ (rear-context-string . "d024d\n    :END:\n")
+ (position . 4200))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20201004161432-changing_the_default_capture_template_in_org_roam.org")
- (front-context-string . "#+TITLE: Changin")
- (rear-context-string)
- (position . 1))
+ (filename . "//DESKTOP-TNT2VMI/Users/baker/gtd/inbox.org")
+ (front-context-string . "** TODO How to R")
+ (rear-context-string . "sd\n** TODO Help\n")
+ (position . 1158))
 ("org-refile-last-stored"
- (filename . "~/gtd/journal.org")
- (front-context-string . "*** TODO Use spe")
- (rear-context-string . "7d9b9\n    :END:\n")
- (position . 6205))
+ (filename . "//DESKTOP-TNT2VMI/Users/baker/gtd/projects.org")
+ (front-context-string . "*** TODO Check o")
+ (rear-context-string . "d024d\n    :END:\n")
+ (position . 4200))
 )

@@ -8,7 +8,7 @@
 (add-to-list 'org-modules 'org-habit)
 (add-hook 'org-mode-hook #'visual-line-mode)
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELLED")))
+      '((sequence "TODO(t)" "NEXT(n)" "IN-PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Set attachment directory
 (setq org-attach-directory "~/zettlekasten/assets/")
@@ -19,6 +19,9 @@
                               ("T" "Tickler" entry
                                (file+headline "~/gtd/tickler.org" "Tickler")
                                "* %i%? \n %U")))
+
+(load-file "~/.emacs.d/customizations/org-mode/archive.el")
+ 
 
 ;;;;;;;;
 ;; KEY MAPPINGS
@@ -164,21 +167,21 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
 (add-hook 'after-init-hook 'org-roam-mode)
 
 (cond ((string-equal system-type "windows-nt")
-      (setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe")))
+       (setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe"))
 
-(load-file "~/.emacs.d/customizations/org-mode/org-protocol-check-filename-for-protocol.el")
-(advice-add 'org-protocol-check-filename-for-protocol :override '+org-protocol-check-filename-for-protocol)
+      (load-file "~/.emacs.d/customizations/org-mode/org-protocol-check-filename-for-protocol.el")
+      (advice-add 'org-protocol-check-filename-for-protocol :override '+org-protocol-check-filename-for-protocol)
 
-(require 'org-roam-server)
-(setq org-roam-server-host "127.0.0.1"
-       org-roam-server-port 8118
-       org-roam-server-export-inline-images t
-       org-roam-server-authenticate nil
-       org-roam-server-network-poll t
-       org-roam-server-network-arrows nil
-       org-roam-server-network-label-truncate t
-       org-roam-server-network-label-truncate-length 60
-       org-roam-server-network-label-wrap-length 20)
+      (require 'org-roam-server)
+      (setq org-roam-server-host "127.0.0.1"
+	    org-roam-server-port 8118
+	    org-roam-server-export-inline-images t
+	    org-roam-server-authenticate nil
+	    org-roam-server-network-poll t
+	    org-roam-server-network-arrows nil
+	    org-roam-server-network-label-truncate t
+	    org-roam-server-network-label-truncate-length 60
+	    org-roam-server-network-label-wrap-length 20))
 
 ;;;;;
 ;; ORG-ROAM BIBTEX
