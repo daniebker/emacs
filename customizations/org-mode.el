@@ -166,7 +166,7 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
 (setq org-roam-directory "~/org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
 
-(cond ((string-equal system-type "windows-nt")
+(if (or (string-equal system-type "darwin") (string-equal system-type "windows-nt"))
        (setq org-roam-graph-viewer "C:/Program Files/Google/Chrome/Application/chrome.exe")
 
        (load-file "~/.emacs.d/customizations/org-mode/org-protocol-check-filename-for-protocol.el")
@@ -181,7 +181,8 @@ So a typical ID could look like \"Org-4nd91V40HI\"."
 	     org-roam-server-network-arrows nil
 	     org-roam-server-network-label-truncate t
 	     org-roam-server-network-label-truncate-length 60
-	     org-roam-server-network-label-wrap-length 20)))
+	     org-roam-server-network-label-wrap-length 20))
+
 
 ;;;;;
 ;; ORG-ROAM BIBTEX
